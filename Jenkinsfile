@@ -4,26 +4,23 @@ pipeline {
 	stages { 
 		stage ('Compile Stage'){
 			steps{
-				withMaven(maven : 'Maven 3.8.1') { 
-					sh 'mvn clean compile'
-				}
+				echo 'Complile'	
+			}
 			}
 
 		}
 
 		stage ('Testing Stage'){ 
 			steps{ 
-				withMaven(maven : 'Maven 3.8.1'){ 
-					sh 'mvn test'
-				}
+				echo 'Testing'	
+			}
 			}
 		}
 
 		stage('Deploy Stage'){ 
 			steps{ 
-				withMaven(maven : 'Maven 3.8.1'){ 
-					sh 'mvn deploy'
-				}
+				echo 'Deploy'
+			}
 			}
 		}
 	}
